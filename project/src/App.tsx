@@ -1,18 +1,14 @@
-import React, {useEffect, useState} from 'react';
-import Chat from './compoennts/chat/chat';
-import JoinChat from './compoennts/joinChat/joinChat';
+import React from 'react';
+import {Route, Routes} from 'react-router-dom';
+import ChatApp from './compoennts/ChatApp';
 
 function App() {
-
-
-  const [name, setName] = useState<string>('');
-  const [submit, setSubmit] = useState<boolean>(false);
-
-
-
   return (
     <>
-    {submit ? <Chat userName={name}/> : <JoinChat setName={setName} setSubmit={setSubmit}/>}
+    <Routes>
+      <Route path = '/' element ={<ChatApp />}/>
+    </Routes>
+   
     </>
   );
 }
