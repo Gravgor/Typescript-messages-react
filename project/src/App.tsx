@@ -1,30 +1,19 @@
-import React, {useState} from 'react';
-import Messages from './Messages';
-
+import React, {useEffect, useState} from 'react';
+import Chat from './compoennts/chat/chat';
+import JoinChat from './compoennts/joinChat/joinChat';
 
 function App() {
 
 
-  const [messages, setMessages] = useState<string[]>([]);
-  const [mess, setMess] = useState<string>("");
+  const [name, setName] = useState<string>('');
+  const [submit, setSubmit] = useState<boolean>(false);
 
-
-  const handleSend = () => {
-    setMessages([...messages, mess])
-    setMess('')
-  }
 
 
   return (
-    <div style={{display: 'flex', flexDirection: 'row', gap: '25px'}}>
-      <div style={{display: 'flex', flexDirection: 'column', gap: '25px'}}>
-        <h1>Wpisz wiadomość</h1>
-        <input type="text" value={mess} onChange={(e) => setMess(e.target.value)} />
-        <button onClick={() => handleSend()}>Wyślij</button>
-      </div>
-      <Messages mess={messages}/>
-      
-    </div>
+    <>
+    {submit ? <Chat userName={name}/> : <JoinChat setName={setName} setSubmit={setSubmit}/>}
+    </>
   );
 }
 
