@@ -102,7 +102,7 @@ code {
 }
 
 ::-webkit-scrollbar {
-  width: 12px;       
+  width:10px;   
   border-radius: 15px;        /* width of the entire scrollbar */
 }
 
@@ -112,7 +112,7 @@ code {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: blue;    /* color of the scroll thumb */
+  background-color: #E77654;    /* color of the scroll thumb */
   border-radius: 20px;       /* roundness of the scroll thumb */
-  border: 3px solid orange;  /* creates padding around scroll thumb */
+  border: 2px solid #E77654;  /* creates padding around scroll thumb */
 }
